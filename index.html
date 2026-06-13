@@ -3,64 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Para Ti ❤️</title>
 
 <style>
 body{
-  margin:0;
-  background:#111827;
-  color:white;
-  font-family:Arial,sans-serif;
-  text-align:center;
+    margin:0;
+    background:#111827;
+    color:white;
+    font-family:Arial,sans-serif;
+    text-align:center;
 }
 
 #login{
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
 
 input{
-  padding:12px;
-  border-radius:10px;
-  border:none;
-  width:250px;
+    padding:12px;
+    width:250px;
+    border:none;
+    border-radius:10px;
 }
 
 button{
-  padding:12px 20px;
-  border:none;
-  border-radius:10px;
-  margin-top:10px;
-  cursor:pointer;
+    padding:12px 20px;
+    margin-top:10px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
 }
 
 #contenido{
-  display:none;
-  padding:30px;
+    display:none;
+    padding:30px;
 }
 
 @keyframes aparecer{
-  from{
-    opacity:0;
-    transform:scale(.8);
-  }
-  to{
-    opacity:1;
-    transform:scale(1);
-  }
+    from{
+        opacity:0;
+        transform:scale(0.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
 }
 
 .animacion{
-  animation:aparecer 1.5s ease;
+    animation:aparecer 1.5s ease;
+}
+
+iframe{
+    max-width:100%;
+    border-radius:15px;
 }
 
 .final{
-  margin-top:40px;
-  font-size:28px;
-  color:pink;
+    margin-top:40px;
+    font-size:28px;
+    color:pink;
 }
 </style>
 </head>
@@ -68,59 +74,69 @@ button{
 <body>
 
 <div id="login">
-  <h1>🔒 Mensaje privado</h1>
 
-  <input
-    type="password"
-    id="clave"
-    placeholder="Contraseña">
+    <h1>🔒 Mensaje Privado</h1>
 
-  <button onclick="entrar()">
-    Entrar
-  </button>
+    <input
+        type="password"
+        id="clave"
+        placeholder="Contraseña">
 
-  <p id="error"></p>
+    <button onclick="entrar()">
+        Entrar
+    </button>
+
+    <p id="error"></p>
+
 </div>
 
 <div id="contenido">
 
-  <h1>❤️ Bienvenida ❤️</h1>
+    <h1>❤️ Para Ti ❤️</h1>
 
-  <video width="80%" controls>
-    <source src="video.mp4" type="video/mp4">
-  </video>
+    <iframe
+        width="360"
+        height="640"
+        src="https://www.youtube.com/embed/AwcV-pU5lN8"
+        title="Video"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
 
-  <br><br>
+    <br><br>
 
-  <a href="mensaje.pdf" target="_blank">
-    <button>📄 Leer mensaje</button>
-  </a>
+    <a href="mensaje.pdf" target="_blank">
+        <button>📄 Leer Mensaje</button>
+    </a>
 
-  <div class="final">
-    Gracias por todo, mi swiftie favorita ❤️
-  </div>
+    <div class="final">
+        Gracias por todo, mi swiftie favorita ❤️
+    </div>
 
 </div>
 
 <script>
+
 function entrar(){
 
-  if(document.getElementById("clave").value==="swiftie"){
+    if(document.getElementById("clave").value==="swiftie"){
 
-    document.getElementById("login").style.display="none";
+        document.getElementById("login").style.display="none";
 
-    const contenido =
-      document.getElementById("contenido");
+        const contenido =
+        document.getElementById("contenido");
 
-    contenido.style.display="block";
-    contenido.classList.add("animacion");
+        contenido.style.display="block";
+        contenido.classList.add("animacion");
 
-  }else{
+    }else{
 
-    document.getElementById("error").innerText =
-      "Contraseña incorrecta";
-  }
+        document.getElementById("error").innerText =
+        "Contraseña incorrecta";
+
+    }
 }
+
 </script>
 
 </body>
